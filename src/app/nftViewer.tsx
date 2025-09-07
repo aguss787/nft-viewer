@@ -62,11 +62,11 @@ export default function NftViewer({ nftData }: { nftData: NftData }) {
 
   return (
     <div className="bg-gray-800 rounded-lg shadow-sm border p-6">
-      <div className="hidden md:flex flex-row gap-4">
+      <div className="hidden lg:flex flex-row gap-4">
         {image}
         {details}
       </div>
-      <div className="flex md:hidden flex-col gap-4">
+      <div className="flex lg:hidden flex-col gap-4">
         {image}
         {details}
       </div>
