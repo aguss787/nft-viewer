@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <div className="bg-black text-white min-h-screen min-w-screen flex flex-col items-center">
-      <div className="text-center max-w-4xl min-w-lg w-screen px-10 pb-80">
+      <div className="text-center max-w-4xl min-w-sm w-screen px-10 pb-80">
         <h1 className="text-4xl font-bold text-primary mb-4 py-16 flex-1">
           NFT Viewer
         </h1>

@@ -1,5 +1,7 @@
 import { NftData } from "./nft";
 import Image from "./image";
+import { FaCopy } from "react-icons/fa6";
+import copy from "copy-to-clipboard";
 
 export default function NftViewer({ nftData }: { nftData: NftData }) {
   const { id, owner, name, description, image: imageUrl, attributes } = nftData;
@@ -15,8 +17,21 @@ export default function NftViewer({ nftData }: { nftData: NftData }) {
       <div className="flex flex-col">
         <h2 className="text-2xl font-bold text-primary">{name}</h2>
         <p className="text-gray-400 text-sm">{description}</p>
-        <p className="text-gray-400 text-sm">Token ID: {id}</p>
-        <p className="text-gray-400 text-sm">Owner: {owner}</p>
+        <DetailRow>
+          <span>Token ID:</span>
+          <span>{id}</span>
+        </DetailRow>
+        <DetailRow>
+          <span>Owner:</span>
+          <span className="hidden sm:inline">{owner}</span>
+          <span className="inline sm:hidden">{shortenAddress(owner)}</span>
+          <span>
+            <FaCopy
+              className="cursor-pointer mt-0.5"
+              onClick={() => copy(owner)}
+            />
+          </span>
+        </DetailRow>
       </div>
 
       <div className="flex flex-col gap-4">
@@ -48,5 +63,15 @@ export default function NftViewer({ nftData }: { nftData: NftData }) {
         {details}
       </div>
     </div>
+  );
+}
+
+function shortenAddress(owner: string): string {
+  return `${owner.slice(0, 6)}...${owner.slice(-4)}`;
+}
+
+function DetailRow({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex flex-row text-gray-400 text-sm gap-2">{children}</div>
   );
 }

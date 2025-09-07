@@ -6,11 +6,13 @@
     "npm:@types/node@20": "20.19.13",
     "npm:@types/react-dom@19": "19.1.9_@types+react@19.1.12",
     "npm:@types/react@19": "19.1.12",
+    "npm:copy-to-clipboard@^3.3.3": "3.3.3",
     "npm:eslint-config-next@15.5.2": "15.5.2_eslint@9.34.0_typescript@5.9.2_@typescript-eslint+parser@8.42.0__eslint@9.34.0__typescript@5.9.2_eslint-plugin-import@2.32.0__eslint@9.34.0",
     "npm:eslint@9": "9.34.0",
     "npm:ethers@^6.15.0": "6.15.0",
     "npm:next@15.5.2": "15.5.2_react@19.1.0_react-dom@19.1.0__react@19.1.0",
     "npm:react-dom@19.1.0": "19.1.0_react@19.1.0",
+    "npm:react-icons@^5.5.0": "5.5.0_react@19.1.0",
     "npm:react-loader-spinner@^6.1.6": "6.1.6_react@19.1.0_react-dom@19.1.0__react@19.1.0",
     "npm:react@19.1.0": "19.1.0",
     "npm:tailwindcss@4": "4.1.13",
@@ -971,6 +973,12 @@
     },
     "concat-map@0.0.1": {
       "integrity": "sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg=="
+    },
+    "copy-to-clipboard@3.3.3": {
+      "integrity": "sha512-2KV8NhB5JqC3ky0r9PMCAZKbUHSwtEo4CwCs0KXgruG43gX5PMqDEBbVU4OUzw2MuAWUfsuFmWvEKG5QRfSnJA==",
+      "dependencies": [
+        "toggle-selection"
+      ]
     },
     "cross-spawn@7.0.6": {
       "integrity": "sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==",
@@ -2206,6 +2214,12 @@
         "scheduler"
       ]
     },
+    "react-icons@5.5.0_react@19.1.0": {
+      "integrity": "sha512-MEFcXdkP3dLo8uumGI5xN3lDFNsRtrjbOEKDLD7yv76v4wpnEq2Lt2qeHaQOr34I/wPN3s3+N08WkQ+CW37Xiw==",
+      "dependencies": [
+        "react"
+      ]
+    },
     "react-is@16.13.1": {
       "integrity": "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
     },
@@ -2578,6 +2592,9 @@
         "is-number"
       ]
     },
+    "toggle-selection@1.0.6": {
+      "integrity": "sha512-BiZS+C1OS8g/q2RRbJmy59xpyghNBqrr6k5L/uKBGRsTfxmu3ffiRnd8mlGPUVayg8pvfi5urfnu8TU7DVOkLQ=="
+    },
     "ts-api-utils@2.1.0_typescript@5.9.2": {
       "integrity": "sha512-CUgTZL1irw8u29bzrOD/nH85jqyc74D6SshFgujOIA7osm2Rz7dYH77agkx7H4FBNxDq7Cjf+IjaX/8zwFW+ZQ==",
       "dependencies": [
@@ -2779,11 +2796,13 @@
         "npm:@types/node@20",
         "npm:@types/react-dom@19",
         "npm:@types/react@19",
+        "npm:copy-to-clipboard@^3.3.3",
         "npm:eslint-config-next@15.5.2",
         "npm:eslint@9",
         "npm:ethers@^6.15.0",
         "npm:next@15.5.2",
         "npm:react-dom@19.1.0",
+        "npm:react-icons@^5.5.0",
         "npm:react-loader-spinner@^6.1.6",
         "npm:react@19.1.0",
         "npm:tailwindcss@4",
