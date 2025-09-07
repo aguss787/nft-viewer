@@ -27,7 +27,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="bg-black text-white min-h-screen min-w-screen flex flex-col">
+          <div className="flex-auto flex flex-col items-center">{children}</div>
+          <div className="min-w-screen flex justify-end">
+            <a
+              href="https://www.flaticon.com/free-icons/nft"
+              title="nft icons"
+              className="text-gray-400 text-xs"
+            >
+              Nft icons created by Freepik - Flaticon
+            </a>
+          </div>
+        </div>
       </body>
     </html>
   );
