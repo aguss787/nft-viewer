@@ -10,9 +10,9 @@ export default function NftForm({
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const [evmRpc, setEvmRpc] = useState<string | null>(null);
-  const [contractAddress, setContractAddress] = useState<string | null>(null);
-  const [tokenId, setTokenId] = useState<string | null>(null);
+  const [evmRpc, setEvmRpc] = useState<string>("");
+  const [contractAddress, setContractAddress] = useState<string>("");
+  const [tokenId, setTokenId] = useState<string>("");
 
   useEffect(() => {
     const evmRpc = localStorage.getItem("evmRpc");
@@ -82,7 +82,7 @@ export default function NftForm({
           id: "evm-rpc",
           label: "EVM RPC",
           placeholder: "https://rpc.hyperliquid-testnet.xyz/evm",
-          value: evmRpc ?? undefined,
+          value: evmRpc,
           onChange: setEvmRpc,
           selector: (
             <select
@@ -114,7 +114,7 @@ export default function NftForm({
           id: "contract-address",
           label: "Contract Address",
           placeholder: "0x...",
-          value: contractAddress ?? undefined,
+          value: contractAddress,
           onChange: setContractAddress,
         })}
 
@@ -122,7 +122,7 @@ export default function NftForm({
           id: "token-id",
           label: "Token ID",
           placeholder: "1",
-          value: tokenId ?? undefined,
+          value: tokenId,
           onChange: setTokenId,
         })}
 
@@ -156,7 +156,7 @@ function field({
 }: {
   id: string;
   label: string;
-  value?: string;
+  value: string;
   onChange: (value: string) => void;
   placeholder?: string;
   selector?: React.ReactNode;

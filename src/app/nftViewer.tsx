@@ -2,8 +2,11 @@ import { NftData } from "./nft";
 import Image from "./image";
 import { FaCopy } from "react-icons/fa6";
 import copy from "copy-to-clipboard";
+import { useState } from "react";
 
 export default function NftViewer({ nftData }: { nftData: NftData }) {
+  const [glow, setGlow] = useState(false);
+
   const { id, owner, name, description, image: imageUrl, attributes } = nftData;
 
   const image = (
@@ -27,8 +30,13 @@ export default function NftViewer({ nftData }: { nftData: NftData }) {
           <span className="inline sm:hidden">{shortenAddress(owner)}</span>
           <span>
             <FaCopy
-              className="cursor-pointer mt-0.5"
-              onClick={() => copy(owner)}
+              className={`cursor-pointer mt-0.5 transition duration-300 
+                  ${glow ? "text-yellow-400" : ""}`}
+              onClick={() => {
+                copy(owner);
+                setGlow(true);
+                setTimeout(() => setGlow(false), 300);
+              }}
             />
           </span>
         </DetailRow>
